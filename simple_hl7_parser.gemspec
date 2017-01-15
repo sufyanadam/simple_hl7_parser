@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Simple, extensible HL7 message parser}
   spec.description   = %q{Dead Simple, extensible HL7 message parser}
+  spec.homepage      = "https://github.com/sufyanadam/simple_hl7_parser"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
