@@ -1,5 +1,9 @@
-require_relative 'hl7_message'
-require_relative 'segment'
+require 'simple_hl7_parser/hl7_message'
+require 'simple_hl7_parser/segments/msh_segment'
+require 'simple_hl7_parser/segments/pid_segment'
+require 'simple_hl7_parser/segments/orc_segment'
+require 'simple_hl7_parser/segments/obr_segment'
+require 'simple_hl7_parser/segments/obx_segment'
 
 module SimpleHL7Parser
   class HL7
