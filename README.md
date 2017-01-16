@@ -42,6 +42,49 @@ msg.obx.first.units                    #=> "mg/dl"
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/sufyanadam/simple_hl7_parser. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+### Adding support for a HL7 Segment
+
+Just create a class under the `SimpleHL7Parser` module namespace called
+`XXXSegment` (where `XXX` is a segment name, such as `PID`), include the
+`Segment` module and define a column map. That's it! It's that simple; hence
+the name `SimpleHL7Parser`.
+
+The column map is a map of `segment_attribute => position_number`. For example,
+the `placer_order_number` is the third element in the `OBR` segment. So the
+column map would define `{placer_order_number: 2}`. The `segment_attribute`
+part of the column map becomes the name of the function you can call to
+retrieve the value of the attribute at the position it maps to.
+
+The example below demonstrates how `SimpleHL7Parser` currently
+supports parsing the `OBR` HL7 segment in Ruby:
+
+Example:
+
+```ruby
+# Extending SimpleHL7Parser to support another
+# HL7 Segment
+require 'simple_hl7_parser/segments/segment'
+
+module SimpleHL7Parser
+  class OBRSegment
+    include Segment
+
+    COLUMN_MAP = {
+      set_id:  1,
+      placer_order_number:  2,
+      filler_order_number:  3,
+      universal_service_id:  4,
+      priority:  5,
+      requested_date_time:  6,
+      observation_date_time:  7,
+      observation_end_date_time:  8,
+    }
+  end
+end
+```
+
+After adding support for a new segment, add a test that demonstrates
+it works correctly and make a pull request :)
 
 ## License
 
