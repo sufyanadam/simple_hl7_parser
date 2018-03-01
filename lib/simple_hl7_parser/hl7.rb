@@ -20,7 +20,7 @@ module SimpleHL7Parser
       segments = hl7.split("\n").map do |line|
         segment_data = line.split('|')
         segment_type = segment_data.first
-        current_parent_obr = nil unless %w[OBR OBX].include?(segment_type)
+        current_parent_obr = nil unless %w[OBR OBX NTE].include?(segment_type)
 
         if klass = SEGMENT_MAP[segment_type.to_sym]
           if segment_type == 'OBR'
