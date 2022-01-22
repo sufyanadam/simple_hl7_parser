@@ -13,6 +13,7 @@ module SimpleHL7Parser
       requested_date_time:  6,
       observation_date_time:  7,
       observation_end_date_time:  8,
+      specimen_received_date_time:  14,
     }
   end
 end
