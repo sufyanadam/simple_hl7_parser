@@ -1,19 +1,15 @@
-name: Ruby
-
+name: Tests
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version: ['2.6', '2.7', '3.0']
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -25,4 +21,11 @@ jobs:
       run: bundle exec rake
     - name: Code Climate Coverage Action
       uses: paambaati/codeclimate-action@v3.0.0
-
+      needs: [ test ]
+      name: coverage
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - uses: paambaati/codeclimate-action@v2.2.4
+        with:
+          coverageCommand: rspec
