@@ -1,3 +1,13 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/c6501ca6d8a44dc1eebd/maintainability)](https://codeclimate.com/github/sufyanadam/simple_hl7_parser/maintainability)
+
+![Tests](https://github.com/sufyanadam/simple_hl7_parser/actions/workflows/ruby.yml/badge.svg)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c6501ca6d8a44dc1eebd/test_coverage)](https://codeclimate.com/github/sufyanadam/simple_hl7_parser/test_coverage)
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/sufyanadam/simple_hl7_parser/blob/master/LICENSE.txt)
+
+
+
 # SimpleHL7Parser
 
 `simple_hl7_parser` is a gem to parse HL7 text into ruby objects, optimized for developer happiness.
