@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'simple_hl7_parser'
 
 RSpec.configure do |config|
