@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe SimpleHL7Parser do
+RSpec.describe SimpleHL7Parser do
   it "has a version number" do
     expect(SimpleHL7Parser::VERSION).not_to be nil
   end

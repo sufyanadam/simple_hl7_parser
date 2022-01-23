@@ -1,7 +1,12 @@
+image: ruby:3.1.0
+
 stages:
   - test
 
 test:
   stage: test
   script:
-    - rake
+    - gem install bundler
+    - bundle
+    - pwd
+    - rspec
