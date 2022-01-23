@@ -19,13 +19,3 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run tests
       run: bundle exec rake
-    - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v3.0.0
-      needs: [ test ]
-      name: coverage
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@master
-      - uses: paambaati/codeclimate-action@v2.2.4
-        with:
-          coverageCommand: rspec
