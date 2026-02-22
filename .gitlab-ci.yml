@@ -6,7 +6,7 @@ stages:
 test:
   stage: test
   script:
-    - gem install bundler:2.3.27
+    - gem install bundler
     - bundle
     - pwd
     - rspec
