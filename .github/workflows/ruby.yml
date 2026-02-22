@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.6', '2.7', '3.0']
+        ruby-version: ['3.2']
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -17,9 +17,16 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install the correct Bundler version
+      run: gem install bundler:2.3.27
+
+    - name: Install dependencies
+      run: bundle _2.3.27_ install
+
     - name: Run tests
       run: bundle exec rake
-    - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v3.0.0
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
+#    - name: Code Climate Coverage Action
+#      uses: paambaati/codeclimate-action@v3
+#      env:
+#        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
