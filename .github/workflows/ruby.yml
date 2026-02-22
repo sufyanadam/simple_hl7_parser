@@ -17,6 +17,12 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install the correct Bundler version
+      run: gem install bundler:2.3.27
+
+    - name: Install dependencies
+      run: bundle _2.3.27_ install
+
     - name: Run tests
       run: bundle exec rake
     - name: Code Climate Coverage Action
