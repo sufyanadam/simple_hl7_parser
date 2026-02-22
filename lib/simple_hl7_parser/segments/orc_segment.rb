@@ -29,6 +29,16 @@ module SimpleHL7Parser
       ordering_facility_address: 22,
       ordering_facility_phone_number: 23,
       ordering_provider_address: 24,
+      order_status_modifier: 25,
+      advanced_beneficiary_notice_override_reason: 26,
+      fillers_expected_availability_date_time: 27,
+      confidentiality_code: 28,
+      order_type: 29,
+      enterer_authorization_mode: 30,
+      parent_universal_service_identifier: 31,
+      advanced_beneficiary_notice_date: 32,
+      alternate_placer_order_number: 33,
+      order_workflow_profile: 34,
     }
   end
 end
