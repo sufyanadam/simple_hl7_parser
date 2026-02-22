@@ -6,6 +6,7 @@ module SimpleHL7Parser
 
     COLUMN_MAP = {
       field_separator: 1,
+      encoding_characters: 1,
       sending_application: 2,
       sending_facility: 3,
       receiving_application: 4,
@@ -23,7 +24,13 @@ module SimpleHL7Parser
       country_code: 16,
       character_set: 17,
       principal_language_of_message: 18,
-      alternate_character_set_handling_Scheme: 19,
+      alternate_character_set_handling_scheme: 19,
+      alternate_character_set_handling_Scheme: 19, # deprecated - use alternate_character_set_handling_scheme
+      message_profile_identifier: 20,
+      sending_responsible_organization: 21,
+      receiving_responsible_organization: 22,
+      sending_network_address: 23,
+      receiving_network_address: 24,
     }
   end
 end
