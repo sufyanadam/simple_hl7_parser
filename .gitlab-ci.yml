@@ -5,14 +5,8 @@ stages:
 
 test:
   stage: test
-- name: Install Bundler 2.3.27
-  run: gem install bundler:2.3.27
-
-- name: Use required Bundler version
-  run: bundle _2.3.27_ install
-
   script:
-    - gem install bundler
+    - gem install bundler:2.3.27
     - bundle
     - pwd
     - rspec
